@@ -1,0 +1,26 @@
+﻿@using egylex.Models.episodes
+@model Episodes
+
+<div class="movie">
+    <p>@Model.EpisodeName .</p>
+    <video controls>
+        <source src="~/videos/[EgyBest].Avengers.Endgame.2019.WEB-DL.1080p.x264.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="similar-items">
+    <h1>@Model.Season.Episodes.Count</h1>
+    @foreach (var e in Model.Season.Episodes)
+    {
+        <div class="similar-item">
+            <img src="~/images/mo1.jpg" />
+            <button>@e.EpisodeName</button>
+        </div>
+    }
+
+   
+    
+</div>
+
+

@@ -1,0 +1,40 @@
+﻿@using egylex.ViewModels
+@model SignInViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="login">
+    <div class="container">
+        <div class="form-container">
+            <h3>Sign in!</h3>
+            <form asp-action="Login" asp-controller="Account" method="post">
+                <div asp-validation-summary="All" class="text-warning"></div>
+                <span>
+                    <span asp-validation-for="Email" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input type="email" asp-for="Email" placeholder="Emali-Address">
+                </div>
+
+                <span>
+                    <span asp-validation-for="Password" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input asp-for="Password" type="password" placeholder="password">
+                </div>
+                <button type="submit">Sign in</button>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input asp-for="RememberMe" type="checkbox" class="custom-control-input">
+                        <label class="custom-control-label" asp-for="RememberMe" style="color:#fff;">@Html.DisplayNameFor(m => m.RememberMe)</label>
+                    </div>
+                </div>
+            </form>
+            <div class="move-to">
+                <p>Have Account? <a asp-action="Register" asp-controller="Account" style="color:#fff">Sign Up Now</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "SerieDetails";
+}
+
+@section Styles{
+    <link href="~/css/details.css" rel="stylesheet" />
+}
+
+<section class="specific">
+    <div class="specific-container">
+        <!--grid && sticky-->
+        <div class="col-left">
+            <partial name="CategoriesPartialView" />
+        </div>
+        <div class="col-right" id="series-data">
+            <partial name="CommonComponentInSeries" />
+            <div id="ajax-call-container">
+                <partial name="SerieDeatailsPartialView" />
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+        function getData(url) {
+            $.ajax({
+                url: url,
+                method: "GET",
+                success: renderDataResult,
+                error: console.log
+            })
+        }
+        function renderDataResult(result) {
+            $("#ajax-call-container").html(result)
+        }
+        function getEoisodes(SeasonId) {
+            var url = `/User/Season/${SeasonId}`
+            getData(url)
+        }
+        function getEoisode(EpisodeId) {
+            var url = `/User/Episode/${EpisodeId}`
+            getData(url)
+        }
+
+
+    </script>
+}

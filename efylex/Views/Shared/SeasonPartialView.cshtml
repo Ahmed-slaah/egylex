@@ -1,0 +1,17 @@
+﻿@using egylex.Models.Seasons
+@model Season
+
+<div class="seasons">
+
+    <p class="items-title">@Model.SeasonName .</p>
+
+    <div class="seasons-container">
+        @foreach (var episode in Model.Episodes)
+        {
+            <div class="season">
+                <img src="~/images/mo2.jpg" alt="">
+                <button onclick="getEoisode(@episode.EpisodeId)">@episode.EpisodeName</button>
+            </div>
+        }
+    </div>
+</div>

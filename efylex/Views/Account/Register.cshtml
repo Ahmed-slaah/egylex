@@ -1,0 +1,57 @@
+﻿@using egylex.ViewModels
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+<section class="login">
+    <div class="container">
+        <div class="form-container">
+            <h3>Sign up!</h3>
+            <form asp-action="Register" asp-controller="Account" enctype="multipart/form-data" method="post">
+
+                <span>
+                    <span asp-validation-for="FirstName" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input type="text" asp-for="FirstName" placeholder="First Name">
+                </div>
+
+                <span>
+                    <span asp-validation-for="LastName" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input type="text" asp-for="LastName" placeholder="Last Name">
+                </div>
+
+                <span>
+                    <span asp-validation-for="Email" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input type="email" asp-for="Email" placeholder="Emali-Address">
+                </div>
+
+                <span>
+                    <span asp-validation-for="Password" class="text-justify badge badge-warning"></span>
+                </span>
+                <div>
+                    <input asp-for="Password" type="password" placeholder="password">
+                </div>
+
+                <span>
+                    <span asp-validation-for="PasswordConfirmed" class="badge badge-warning"></span>
+                </span>
+                <div>
+                    <input type="password" asp-for="PasswordConfirmed" placeholder="Confirm Password">
+                </div>
+                <div >
+                    <input  asp-for="PhotoUrl" id="customFile">
+                </div>
+
+                <button type="submit">Sign up</button>
+            </form>
+            <div class="move-to">
+                <p>Have Account? <a asp-action="Login" asp-controller="Account" style="color:#fff">Sign In Now</a></p>
+            </div>
+        </div>
+    </div>
+</section>

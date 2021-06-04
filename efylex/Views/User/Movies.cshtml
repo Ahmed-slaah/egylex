@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Movies";
+}
+
+@section Styles{
+    <link href="~/css/ItemShow.css" rel="stylesheet" />
+}
+<section class="specific">
+    <div class="specific-container">
+        <!--grid && sticky-->
+        <div class="col-left col-3">
+            <div class="category-container">
+                @foreach (var type in ViewBag.categories)
+                {
+                    <button name="tagName" onclick="getMoviesByType(this)" class="badge ">@type.CategoryName</button>
+                }
+            </div>
+        </div>
+        <div class="col-right col-9">
+            <!--
+    <button onclick="toggle_links()" id="show-search"> << </button>
+
+    -->
+            <form asp-action="MovieName" asp-controller="User" method="post">
+                <div id="search-box" class="search-box">
+                    <input id="search-input" name="movieName" type="text" placeholder="Enter the name">
+                    <button onclick="getMoviesByName()" type="button" name="movieName" id="search-btn">search</button>
+                </div>
+            </form>
+            <div id="ajax-call-container" class="type-container">
+                <partial name="MoviePartialView" />
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+    function getData(searchText, url) {
+        $.ajax({
+            url: url,
+            method: "POST",
+            data: searchText,
+            success: renderSearchResult,
+            error: console.log
+        })
+    }
+    function renderSearchResult(result) {
+        $("#ajax-call-container").html(result)
+    }
+    function getMoviesByName() {
+        var movieName = $("#search-input").val();
+        var url = `/User/MovieName`
+        getData({ movieName }, url)
+        }
+
+    function getMoviesByType(target) {
+        var tagName = target.innerText;
+        console.log(tagName);
+        var url = `/User/MovieType`
+        getData({ tagName }, url)
+        }
+
+
+    </script> 
+<script>
+    function toggle_links() {
+        var links = document.getElementById('search-box');
+        if (links.style.display === "none") {
+            links.style.display = "block";
+        } else {
+            links.style.display = "none";
+        }
+    }
+</script>
+
+}

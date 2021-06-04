@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "egylex", "efylex\egylex.csproj", "{F653AEED-26E0-41B3-AAA9-2E38B89F8E6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F653AEED-26E0-41B3-AAA9-2E38B89F8E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F653AEED-26E0-41B3-AAA9-2E38B89F8E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F653AEED-26E0-41B3-AAA9-2E38B89F8E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F653AEED-26E0-41B3-AAA9-2E38B89F8E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DF6983F-D884-425C-957F-A2ED248392B3}
+	EndGlobalSection
+EndGlobal

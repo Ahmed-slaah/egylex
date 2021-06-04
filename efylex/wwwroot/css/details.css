@@ -1,0 +1,221 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.specific .specific-container {
+    display: grid;
+    grid-auto-rows: minmax(100px,auto);
+    grid-template-areas:
+        "left right right right right right";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+    .specific .specific-container .col-right {
+        grid-area: right;
+    }
+
+    .specific .specific-container .col-left {
+        grid-area: left;
+        height: 100%;
+        margin-top: 10px;
+    }
+
+.col-left .category-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    align-content: center;
+}
+
+    .col-left .category-container a {
+        color: #fff;
+    }
+
+        .col-left .category-container a:hover {
+            cursor: pointer;
+        }
+/*details*/
+.col-right .details-container {
+    background: url("../images/detailsbackground.jpg");
+}
+
+    .col-right .details-container .information {
+        display: flex;
+        background-color: rgba(0,0,0,.92);
+        height: 40vh;
+        width: 100%;
+    }
+
+        .col-right .details-container .information .item-img {
+            width: 30%;
+        }
+
+        .col-right .details-container .information .item-data {
+            min-width: 70%;
+            padding-top: 10px;
+        }
+
+        .col-right .details-container .information .item-img img {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .col-right .details-container .information .item-data table {
+            padding-left: 5%;
+            border: none;
+            height: 100%;
+        }
+
+.item-data table tr {
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.item-data table td p,
+.col-right .story p,
+.col-right .trailer p,
+.col-right .movie p,
+.col-right .seasons p 
+{
+    color: #a6050d;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.item-data table td span,
+.col-right .story .story-details {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 10px;
+}
+.item-data table td p,
+.item-data table td span {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.col-right .story,
+.col-right .seasons
+{
+    margin-top: 25px;
+}
+
+.col-right .trailer {
+    height: 300px;
+    align-content: center;
+    margin-top: 25px;
+}
+
+    .col-right .trailer iframe {
+        margin: auto;
+        width: 50%;
+        height: 80%;
+    }
+
+.col-right .movie {
+    height: 500px;
+    align-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+    .col-right .movie video {
+        padding-top: 10px;
+        width: 100%;
+        height:90%;
+    }
+.col-left .category-container a {
+    color: #fff;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #a6050d;
+    font-size: 15px;
+    max-width: 48%;
+}
+
+    .col-left .category-container a:hover {
+        background-color: #fff;
+        color: #a6050d;
+    }
+
+    .col-left .category-container a:hover {
+        cursor: pointer;
+    }
+    /*season*/
+.col-right .seasons .seasons-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+    .col-right .seasons .seasons-container .season {
+        max-width: 200px;
+        max-height: 300px;
+        margin-right: 20px;
+        color: #a6050d;
+        text-align: center;
+    }
+        .col-right .seasons .seasons-container .season img {
+            height: 80%;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .col-right .seasons .seasons-container .season button,
+        .col-right .seasons .seasons-container .season a,
+        .similar-items .similar-item button 
+        {
+            font-size: 20px;
+            font-weight: 400;
+            height: 10%;
+            text-align: center;
+            text-decoration: none;
+            padding-top: 10px;
+            color: #a6050d;
+            background-color: black;
+            border: none;
+        }
+        /*episodes*/
+.similar-items {
+    max-height: 300px;
+    border: 1px solid black;
+    display: flex;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+    .similar-items::-webkit-scrollbar {
+        width: 3px;
+        background-color: black;
+    }
+    .similar-items::-webkit-scrollbar-thumb {
+        width: 3px;
+        background-color: #a6050d;
+    }
+    .similar-items .similar-item {
+        min-width: 250px;
+        height: 280px;
+        line-height: 110px;
+        margin-right: 20px;
+        max-width: 250px;
+    }
+
+
+        .similar-items .similar-item img {
+            max-height: 70%;
+            width: 100%;
+            border-radius: 5px;
+        }
+

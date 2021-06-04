@@ -1,0 +1,49 @@
+﻿@using egylex.Models.Series
+@model Serie
+
+
+<div class="details-container">
+    <div class="information">
+        <div class="item-img">
+            <img src="~/images/mo2.jpg" alt="">
+        </div>
+        <div class="item-data">
+            <table>
+                <tr>
+                    <td><p>Name</p></td>
+                    <td><span>@Model.SeriesName</span></td>
+                </tr>
+                <tr>
+                    <td><p>Country</p></td>
+                    <td><span>@Model.Country</span></td>
+                </tr>
+                <tr>
+                    <td><p>Language</p></td>
+                    <td><span>@Model.Language</span></td>
+                </tr>
+                <tr>
+                    <td><p>Date</p></td>
+                    <td><span>@Model.Date.Year</span></td>
+                </tr>
+                <tr>
+                    <td><p>Type</p></td>
+                    <td>
+                        @foreach (var type in Model.SeriesCategories)
+                        {
+                            <span>@type.Category.CategoryName .</span>
+                        }
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div class="story">
+    <p>Story</p>
+    <p class="story-details">@Model.story</p>
+</div>
+<div class="trailer">
+    <p>Trailer</p>
+    <iframe src=@Model.Triler frameborder="0"></iframe>
+</div>
